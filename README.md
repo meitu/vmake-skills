@@ -4,11 +4,13 @@ Seven Agent Skills for image enhancement, video enhancement, removal, dynamic ca
 
 ## Install skills
 
+Install all seven skills without interactive prompts:
+
 ```bash
-npx skills add meitu/vmake-skills
+npx skills add meitu/vmake-skills -y
 ```
 
-List available skills or install one:
+Optional: list available skills or install only one:
 
 ```bash
 npx skills add meitu/vmake-skills --list
