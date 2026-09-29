@@ -1,6 +1,6 @@
 # CLI setup, inputs, and authentication
 
-Read this file before the first invocation. Use the current host's terminal. The CLI requires Node.js 20.3+, npm, and network access; local video validation also requires `ffprobe`.
+Read this file before the first invocation. Use the current host's terminal. The CLI requires Node.js 20.3+, npm, and network access; local video validation uses `ffprobe` installed with the CLI through npm dependencies, with no separate FFmpeg installation required.
 
 ## Resolve the command
 
@@ -10,10 +10,10 @@ Read this file before the first invocation. Use the current host's terminal. The
 
 ## Install for standalone use
 
-The source targets CLI version `0.1.8`, compatible with `>=0.1.8 <0.2.0`. Use that exact version when preparing an installation; availability in a registry must be checked separately.
+The source targets CLI version `0.1.10`, compatible with `>=0.1.10 <0.2.0`. Use that exact version when preparing an installation; availability in a registry must be checked separately.
 
 ```bash
-npm i -g vmake-labs-cli@0.1.9
+npm i -g --include=optional vmake-labs-cli@0.1.10
 vmake --version
 vmake --help
 ```
@@ -21,7 +21,7 @@ vmake --help
 If the user chooses a project-local installation, run these commands in that project:
 
 ```bash
-npm i vmake-labs-cli@0.1.9
+npm i --include=optional vmake-labs-cli@0.1.10
 ./node_modules/.bin/vmake --version
 ./node_modules/.bin/vmake --help
 ```
@@ -52,7 +52,7 @@ CLI parameters describe the invocation surface, not every algorithmic capability
 
 ## Arguments and optional local validation
 
-- Prefer the minimal file-argument example and omit unspecified options. The shared CLI still defaults client `lang` to `zh-Hans`; disclose this default without asking again. English Skill documentation does not change backend defaults. Apply other defaults only under their declared interaction policy.
+- Prefer the minimal file-argument example and omit unspecified options. Vmake defaults client `lang` to `en`; disclose this default without asking again. Preserve an explicitly requested `--lang` or parameter-file `lang`. Client language does not translate source audio or replace montage content `language`. Apply other defaults only under their declared interaction policy.
 - For complex input, write a temporary JSON parameter file and pass `--params-file`. Put all business fields in that file; do not mix it with media, session, language, detach, or other business flags. Validate missing, null, empty, false, zero, and array values without coercion.
 - For an explicit input check or diagnosis, supported commands accept `--validate-only --json` with flags or a parameter file. Validation does not authenticate, upload, or submit. Downloading an input is a separate step. Execution validates again; routine processing does not require a separate preflight.
 - `deferredChecks` lists work still to be verified remotely; it does not establish account entitlements, URL reachability, a ready Brief, or user confirmation. `--json` does not combine a business event stream into one JSON object.
@@ -62,6 +62,8 @@ CLI parameters describe the invocation surface, not every algorithmic capability
 
 1. Run `vmake auth status --check`. Submit only after it reports `connected` with exit code 0. Local validation does not require login.
 2. If disconnected, run `vmake auth login --no-open` once. Immediately show the actual complete HTTPS link, including `session_id`, labeled "Sign in to Vmake Labs". Keep the process running until authorization completes, then recheck status. `--no-open` suppresses browser opening, not the wait. The default wait is at most 285 seconds; report a timeout instead of looping. Network checks can also produce `disconnected`, so do not assume credentials expired.
-3. Keep the same environment and configuration directory. Respect an existing `KAIPAI_CONFIG_DIR`, otherwise use `~/.kaipai`. Do not read, construct, request, or expose tokens, cookies, or API keys. Run `auth logout` only when requested.
+3. Keep the same environment and configuration directory. Use only `CLI_*` configuration, respecting an existing `CLI_CONFIG_DIR`; otherwise use `~/.vmake`. Use Vmake credentials and application endpoints exclusively; do not switch applications or accounts when an operation fails. Do not read, construct, request, or expose tokens, cookies, or API keys. Run `auth logout` only when requested.
+
+The Vmake pre-release authorization page is available. For pre-release verification, use `CLI_ENV=pre` for `vmake auth login`, `vmake auth status --check`, and every business command, keeping the same configuration directory. Verify beta and release separately. On a 404 or authorization failure, report the actual error and stop; do not switch applications or accounts.
 
 Proceed with an authorized routine request once its inputs are complete. Additional generation, expanded batches, changed goals, and failed-task retries need matching authorization. Handle overwrites and deletions within existing authorization. Follow the Skill's separate business-plan confirmation and actual service interactions.
