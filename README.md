@@ -19,16 +19,16 @@ npx skills add meitu/vmake-skills --skill vmake-image-repair
 
 ## Prepare the runtime
 
-Installing a Skill does not install its CLI. Requires Node.js 20.3 or newer, npm, network access, and `ffprobe` for local video validation.
+Installing a Skill does not install its CLI. Requires Node.js 20.3 or newer, npm, and network access. Local video validation uses `ffprobe` installed with the CLI through npm dependencies; no separate FFmpeg installation is required.
 
 ```bash
-npm install -g vmake-labs-cli@0.1.9
+npm install -g --include=optional vmake-labs-cli@0.1.10
 vmake --version
 vmake auth login
 vmake auth status --check
 ```
 
-The distributed Skills target CLI 0.1.9 and declare compatibility with `>=0.1.8 <0.2.0`. The setup references retain an older target-version sentence; their installation commands and the Skill entries specify 0.1.9. Use 0.1.9 for this release.
+The distributed Skills are version 1.0.7, target CLI 0.1.10, and declare compatibility with `>=0.1.10 <0.2.0`. Use Vmake credentials and `CLI_*` configuration; the default configuration root is `~/.vmake`.
 
 ## Available skills
 
@@ -50,7 +50,7 @@ For example: "Use vmake-image-repair to improve the clarity of this attached pho
 
 Smart montage first analyzes the inputs and presents a plan; generation follows confirmation of the actual ready plan. Each Skill includes its own setup and recovery references. Keep the complete Skill directory when copying it manually.
 
-Skill instructions are in English. The shared CLI defaults its client language to `zh-Hans`; English instructions do not change backend defaults.
+Skill instructions are in English. Vmake defaults its client language to `en`; an explicit `--lang` or parameter-file `lang` takes precedence. Client language does not translate source audio or replace montage content `language`.
 
 ## Validation
 
