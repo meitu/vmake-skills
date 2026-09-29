@@ -1,17 +1,17 @@
 ---
 name: vmake-smart-montage
-description: Turn 1-10 images, videos, or mixed inputs into a coherent video.
+description: Turn 1-20 images, videos, or mixed inputs into a coherent video.
   Use for travel, visits, daily vlogs, talking-head montages, or product
   stories; image-only input is supported. Analyze and present the plan first,
   then generate after confirmation.
 metadata:
-  version: 1.0.7
+  version: 1.0.8
 ---
 # Smart montage
 
 ## Capability and preparation
 
-Use `mixed-cut analyze / generate` to interpret media and the creative goal, arrange visuals and pacing, and generate after plan confirmation. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
+Use `mixed-cut analyze / generate` to interpret media and the creative goal, arrange visuals and pacing, and generate after plan confirmation. Requires `vmake-labs-cli`, targeting version `0.1.11`, compatible with `>=0.1.11 <0.2.0`.
 
 Read [CLI setup](references/platform.md) before the first invocation. Check the version and both `mixed-cut analyze --help` and `mixed-cut generate --help`. Query the relevant `vmake contracts` entries when JSON fields or media limits are unclear. For talking-head plan edits, read [generation answers](references/answer.md); for output, interaction, or errors, read [runtime and recovery](references/runtime.md).
 
@@ -22,8 +22,8 @@ Read [CLI setup](references/platform.md) before the first invocation. Check the 
 
 ## Collect media and analyze
 
-1. Collect 1-10 real image/video files or URLs and a theme. Preserve provided copy, ordering, narrative, and pacing. When inputs and theme are clear, prepare and analyze directly; do not require the user to classify ARoll/BRoll first. Ask only for missing information that affects the result.
-2. Use readable local files. Download every remote original according to CLI setup, including session media and historical outputs. Preserve sources, local paths, ordering across types, and repeated inputs. If a download fails, ask for the original local file; analyze only once all selected inputs are available. For more than 10 inputs, help the user select without silently truncating, batching, or choosing.
+1. Collect 1-20 real image/video files or URLs and a theme. Preserve provided copy, ordering, narrative, and pacing. When inputs and theme are clear, prepare and analyze directly; do not require the user to classify ARoll/BRoll first. Ask only for missing information that affects the result.
+2. Use readable local files. Download every remote original according to CLI setup, including session media and historical outputs. Preserve sources, local paths, ordering across types, and repeated inputs. If a download fails, ask for the original local file; analyze only once all selected inputs are available. For more than 20 inputs, help the user select without silently truncating, batching, or choosing.
 3. Arrange `--image-file` and `--video-file` in the user's order, repeating flags as needed. Do not regroup by media type. Add `-r '<session_id>'` to reuse a session; omit it for a new one. Put the theme and known requirements in `-p`; use current help for optional flags.
 4. The CLI validates the whole batch, uploads in order, and submits one analysis request using its CDN URLs. Do not first call `create-room` or `add-media`, or use `--item-id`. Describe roles by positions such as "the first input"; local paths are not remote references. Do not invent unseen scenes or edit points.
 
