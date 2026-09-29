@@ -10,10 +10,10 @@ Read this file before the first invocation. Use the current host's terminal. The
 
 ## Install for standalone use
 
-The source targets CLI version `0.1.10`, compatible with `>=0.1.10 <0.2.0`. Use that exact version when preparing an installation; availability in a registry must be checked separately.
+The source targets CLI version `0.1.11`, compatible with `>=0.1.11 <0.2.0`. Use that exact version when preparing an installation; availability in a registry must be checked separately.
 
 ```bash
-npm i -g --include=optional vmake-labs-cli@0.1.10
+npm i -g --include=optional vmake-labs-cli@0.1.11
 vmake --version
 vmake --help
 ```
@@ -21,7 +21,7 @@ vmake --help
 If the user chooses a project-local installation, run these commands in that project:
 
 ```bash
-npm i --include=optional vmake-labs-cli@0.1.10
+npm i --include=optional vmake-labs-cli@0.1.11
 ./node_modules/.bin/vmake --version
 ./node_modules/.bin/vmake --help
 ```
