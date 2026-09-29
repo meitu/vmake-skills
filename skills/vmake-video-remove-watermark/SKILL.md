@@ -3,7 +3,7 @@ name: vmake-video-remove-watermark
 description: Remove video watermarks and repair the obscured picture. Use when
   the user asks to remove a video watermark or clean up watermark overlays.
 metadata:
-  version: 1.0.7
+  version: 1.0.8
 ---
 # Remove video watermarks
 
@@ -11,7 +11,7 @@ metadata:
 
 Use video-remove-auto for watermark removal. The service automatically identifies the content to remove and repairs the frames. Proceed within the existing authorization when the input and goal are clear. Preserve the original for comparison; check the setup reference for requests to preserve elements or control regions.
 
-Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
+Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.11`, compatible with `>=0.1.11 <0.2.0`.
 
 Before the first invocation, read [CLI setup](references/platform.md), resolve the executable, and check its version and `tool video-remove-auto --help`. If JSON fields or media limits are unclear, query the relevant `vmake contracts` entry. For output parsing, service questions, or interrupted execution, read [runtime and recovery](references/runtime.md).
 
