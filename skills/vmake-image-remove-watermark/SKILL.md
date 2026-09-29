@@ -4,7 +4,7 @@ description: Remove text and text watermarks from a single image and repair the
   covered background. Use for text removal, text-watermark removal, or cleaning
   up text overlays.
 metadata:
-  version: 1.0.1
+  version: 1.0.7
 ---
 # Remove image text watermarks
 
@@ -12,7 +12,7 @@ metadata:
 
 Use image-remove-text to identify and remove text and text watermarks and repair the covered background. Proceed when the input and text-removal goal are clear; the service performs recognition and processing.
 
-Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.9`, compatible with `>=0.1.8 <0.2.0`.
+Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
 
 Before the first invocation, read [CLI setup](references/platform.md), resolve the executable, and check its version and `tool image-remove-text --help`. If JSON fields or media limits are unclear, query the relevant `vmake contracts` entry. For output parsing, service questions, or interrupted execution, read [runtime and recovery](references/runtime.md).
 
