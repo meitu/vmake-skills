@@ -4,13 +4,13 @@ description: Create dynamic captions from video speech or an existing subtitle
   timeline. Use for automatic captions, talking-head captions, adding captions
   to a finished video, or changing caption styles.
 metadata:
-  version: 1.0.1
+  version: 1.0.7
 ---
 # Dynamic captions
 
 ## Capability and preparation
 
-Use `subtitle` to add dynamic captions or change their style, returning a new video while preserving the original. Requires `vmake-labs-cli`, targeting version `0.1.9`, compatible with `>=0.1.8 <0.2.0`.
+Use `subtitle` to add dynamic captions or change their style, returning a new video while preserving the original. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
 
 Before the first invocation, read [CLI setup](references/platform.md), resolve the executable, and check its version and the file parameters in `subtitle --help`. For unclear JSON fields or media limits, query the `subtitle` entry in `vmake contracts`. Read [runtime and recovery](references/runtime.md) for output, interactions, and errors.
 
