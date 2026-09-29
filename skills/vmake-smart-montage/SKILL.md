@@ -5,13 +5,13 @@ description: Turn 1-10 images, videos, or mixed inputs into a coherent video.
   stories; image-only input is supported. Analyze and present the plan first,
   then generate after confirmation.
 metadata:
-  version: 1.0.1
+  version: 1.0.7
 ---
 # Smart montage
 
 ## Capability and preparation
 
-Use `mixed-cut analyze / generate` to interpret media and the creative goal, arrange visuals and pacing, and generate after plan confirmation. Requires `vmake-labs-cli`, targeting version `0.1.9`, compatible with `>=0.1.8 <0.2.0`.
+Use `mixed-cut analyze / generate` to interpret media and the creative goal, arrange visuals and pacing, and generate after plan confirmation. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
 
 Read [CLI setup](references/platform.md) before the first invocation. Check the version and both `mixed-cut analyze --help` and `mixed-cut generate --help`. Query the relevant `vmake contracts` entries when JSON fields or media limits are unclear. For talking-head plan edits, read [generation answers](references/answer.md); for output, interaction, or errors, read [runtime and recovery](references/runtime.md).
 
