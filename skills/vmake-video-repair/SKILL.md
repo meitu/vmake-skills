@@ -3,7 +3,7 @@ name: vmake-video-repair
 description: Improve video clarity and detail and reduce visual noise. Use for
   blurry or low-resolution video enhancement and visual denoising.
 metadata:
-  version: 1.0.7
+  version: 1.0.8
 ---
 # Video quality repair
 
@@ -11,7 +11,7 @@ metadata:
 
 Use video-repair to improve clarity and detail and reduce blur and visual noise. Proceed when the input and quality goal are clear. Route audio-track processing to an appropriate audio capability.
 
-Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
+Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.11`, compatible with `>=0.1.11 <0.2.0`.
 
 Before the first invocation, read [CLI setup](references/platform.md), resolve the executable, and check its version and `tool video-repair --help`. If JSON fields or media limits are unclear, query the relevant `vmake contracts` entry. For output parsing, service questions, or interrupted execution, read [runtime and recovery](references/runtime.md).
 
