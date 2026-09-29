@@ -3,7 +3,7 @@ name: vmake-image-repair
 description: Enhance the clarity and detail of a single image. Use for blurry
   photos, low-resolution images, or restoring the clarity of old photographs.
 metadata:
-  version: 1.0.1
+  version: 1.0.7
 ---
 # Image quality repair
 
@@ -11,7 +11,7 @@ metadata:
 
 Enhance a blurry or low-resolution image with image-repair. Improve visual clarity and detail and return the repaired image. Proceed when the input and enhancement goal are clear.
 
-Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.9`, compatible with `>=0.1.8 <0.2.0`.
+Use parameters supported by the current CLI; consult help or contracts for details. Requires `vmake-labs-cli`, targeting version `0.1.10`, compatible with `>=0.1.10 <0.2.0`.
 
 Before the first invocation, read [CLI setup](references/platform.md), resolve the executable, and check its version and `tool image-repair --help`. If JSON fields or media limits are unclear, query the relevant `vmake contracts` entry. For output parsing, service questions, or interrupted execution, read [runtime and recovery](references/runtime.md).
 
