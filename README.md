@@ -22,20 +22,20 @@ npx skills add meitu/vmake-skills --skill vmake-image-repair
 Installing a Skill does not install its CLI. Requires Node.js 20.3 or newer, npm, and network access. Local video validation uses `ffprobe` installed with the CLI through npm dependencies; no separate FFmpeg installation is required.
 
 ```bash
-npm install -g --include=optional vmake-labs-cli@0.1.10
+npm install -g --include=optional vmake-labs-cli@0.1.11
 vmake --version
 vmake auth login
 vmake auth status --check
 ```
 
-The distributed Skills are version 1.0.7, target CLI 0.1.10, and declare compatibility with `>=0.1.10 <0.2.0`. Use Vmake credentials and `CLI_*` configuration; the default configuration root is `~/.vmake`.
+The distributed Skills are version 1.0.8, target CLI 0.1.11, and declare compatibility with `>=0.1.11 <0.2.0`. Use Vmake credentials and `CLI_*` configuration; the default configuration root is `~/.vmake`.
 
 ## Available skills
 
 | Skill | Capability |
 | --- | --- |
 | [vmake-dynamic-caption](skills/vmake-dynamic-caption/SKILL.md) | Create dynamic captions from video speech or subtitle timelines. |
-| [vmake-smart-montage](skills/vmake-smart-montage/SKILL.md) | Analyze and edit image, video, or mixed media into a montage. |
+| [vmake-smart-montage](skills/vmake-smart-montage/SKILL.md) | Analyze and edit 1–20 images, videos, or mixed inputs into a montage. |
 | [vmake-image-repair](skills/vmake-image-repair/SKILL.md) | Enhance image clarity and detail. |
 | [vmake-image-remove-watermark](skills/vmake-image-remove-watermark/SKILL.md) | Remove image text and text watermarks. |
 | [vmake-video-repair](skills/vmake-video-repair/SKILL.md) | Enhance video quality. |
